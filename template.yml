@@ -9,3 +9,13 @@ Resources:
       CodeUri: lambdas/
       Role: arn:aws:iam::900835517207:role/service-role/MyFirstFunction-role-dwts5yyc
       Timeout: 100
+
+  createabucketlambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: createandlistbucket.lambda_handler
+      Runtime: python3.10
+      FunctionName: createandlistbucket
+      CodeUri: lambdas/
+      Role: arn:aws:iam::900835517207:role/service-role/MyFirstFunction-role-dwts5yyc
+      Timeout: 100
