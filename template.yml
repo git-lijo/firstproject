@@ -19,3 +19,9 @@ Resources:
       CodeUri: lambdas/
       Role: arn:aws:iam::900835517207:role/service-role/MyFirstFunction-role-dwts5yyc
       Timeout: 100
+      Events:
+        CreateBucket:
+          Type: Api
+          Properties:
+            Path: /createbucket
+            Method: post

@@ -6,7 +6,7 @@ Resources:
       Handler: myfirstlambda.lambda_handler
       Runtime: python3.10
       FunctionName: myfirstlambda
-      CodeUri: s3://lijobucket/6fbe3d88781d04390dd1a36d895ce558
+      CodeUri: s3://lijobucket/baf4676c1ac5a6bd1167e691fc670d99
       Role: arn:aws:iam::900835517207:role/service-role/MyFirstFunction-role-dwts5yyc
       Timeout: 100
   createabucketlambda:
@@ -15,6 +15,12 @@ Resources:
       Handler: createandlistbucket.lambda_handler
       Runtime: python3.10
       FunctionName: createandlistbucket
-      CodeUri: s3://lijobucket/6fbe3d88781d04390dd1a36d895ce558
+      CodeUri: s3://lijobucket/baf4676c1ac5a6bd1167e691fc670d99
       Role: arn:aws:iam::900835517207:role/service-role/MyFirstFunction-role-dwts5yyc
       Timeout: 100
+      Events:
+        CreateBucket:
+          Type: Api
+          Properties:
+            Path: /createbucket
+            Method: post
