@@ -25,3 +25,19 @@ Resources:
           Properties:
             Path: /createbucket
             Method: post
+
+  listobjectbucket:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: listobjectbucket.lambda_handler
+      Runtime: python3.10
+      FunctionName: listobjectbucket
+      CodeUri: lambdas/
+      Role: arn:aws:iam::900835517207:role/service-role/MyFirstFunction-role-dwts5yyc
+      Timeout: 100
+      Events:
+        ListObject:
+          Type: Api
+          Properties:
+            Path: /listobject
+            Method: post
