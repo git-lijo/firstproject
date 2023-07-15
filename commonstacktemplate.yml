@@ -21,3 +21,43 @@ Resources:
       ProvisionedThroughput: 
         ReadCapacityUnits: "1"
         WriteCapacityUnits: "1"
+
+  IamTrustPolicy:
+    Type: 'AWS::IAM::Role'
+    Description: Creating service role in IAM for AWS Lambda
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - lambda.amazonaws.com
+            Action:
+              - 'sts:AssumeRole'
+      RoleName: commonrole
+      Policies:
+        -
+          #common policy for s3,dynamodb
+          PolicyName: CommonPolicy
+          PolicyDocument:
+            Version: 2012-10-17
+            Statement:
+              -
+                Effect: Allow
+                Action: 
+                - 's3:GetObject'
+                - 'logs:CreateLogStream'
+                - 's3:ListAllMyBuckets'
+                - 's3:ListBucket'
+                - 'logs:CreateLogGroup'
+                - 'logs:PutLogEvents'
+                - 's3:CreateBucket'
+                - 'dynamodb:PutItem'
+                - 'dynamodb:DescribeTable'
+                - 'dynamodb:ListTables'
+                - 'dynamodb:DeleteItem'
+                - 'dynamodb:GetItem'
+                - 'dynamodb:UpdateItem'
+                - 'dynamodb:UpdateTable'
+                - 'dynamodb:GetRecords'
+                Resource: '*'

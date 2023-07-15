@@ -6,8 +6,8 @@ Resources:
       Handler: myfirstlambda.lambda_handler
       Runtime: python3.10
       FunctionName: myfirstlambda
-      CodeUri: s3://lijobucket/7be8ce3a30519606bdf27d0a6b982096
-      Role: arn:aws:iam::900835517207:role/service-role/MyFirstFunction-role-dwts5yyc
+      CodeUri: s3://lijobucket/6b2365b51592854272949895bc97b9e8
+      Role: arn:aws:iam::900835517207:role/commonrole
       Timeout: 100
   createabucketlambda:
     Type: AWS::Serverless::Function
@@ -15,8 +15,8 @@ Resources:
       Handler: createandlistbucket.lambda_handler
       Runtime: python3.10
       FunctionName: createandlistbucket
-      CodeUri: s3://lijobucket/7be8ce3a30519606bdf27d0a6b982096
-      Role: arn:aws:iam::900835517207:role/service-role/MyFirstFunction-role-dwts5yyc
+      CodeUri: s3://lijobucket/6b2365b51592854272949895bc97b9e8
+      Role: arn:aws:iam::900835517207:role/commonrole
       Timeout: 100
       Events:
         CreateBucket:
@@ -30,8 +30,8 @@ Resources:
       Handler: listobjectbucket.lambda_handler
       Runtime: python3.10
       FunctionName: listobjectbucket
-      CodeUri: s3://lijobucket/7be8ce3a30519606bdf27d0a6b982096
-      Role: arn:aws:iam::900835517207:role/service-role/MyFirstFunction-role-dwts5yyc
+      CodeUri: s3://lijobucket/6b2365b51592854272949895bc97b9e8
+      Role: arn:aws:iam::900835517207:role/commonrole
       Timeout: 100
       Events:
         ListObject:
@@ -45,8 +45,8 @@ Resources:
       Handler: cruddynamo.lambda_handler
       Runtime: python3.10
       FunctionName: cruddynamo
-      CodeUri: s3://lijobucket/7be8ce3a30519606bdf27d0a6b982096
-      Role: arn:aws:iam::900835517207:role/service-role/MyFirstFunction-role-dwts5yyc
+      CodeUri: s3://lijobucket/6b2365b51592854272949895bc97b9e8
+      Role: arn:aws:iam::900835517207:role/commonrole
       Timeout: 100
       Events:
         ListObject:
